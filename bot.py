@@ -1,3 +1,4 @@
+from log import logger
 from dotenv import load_dotenv
 import os
 
@@ -10,12 +11,23 @@ TOKEN = os.getenv("BOT_TOKEN")
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    logger.info(
+        f"START | User: {update.effective_user.first_name} "
+        f"(@{update.effective_user.username}) | "
+        f"ID: {update.effective_user.id}"
+    )
     await update.message.reply_text(
         "Hello! Ask me: 'When is your birthday?'"
     )
 
 
 async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    logger.info(
+        f"MESSAGE | User: {update.effective_user.first_name} "
+        f"(@{update.effective_user.username}) | "
+        f"ID: {update.effective_user.id} | "
+        f"Text: {update.message.text}"
+    )
     text = update.message.text.lower().strip()
 
     qa = {
