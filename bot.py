@@ -33,7 +33,8 @@ async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ("favorite hobby", "favorite work", "moja"): "I like arguing for fun.",
         ("favorite subject", "favourite subject", "subject","fav sub","sub"): "My favorite subject is Biology.",
         ("where is your village", "village","bari","town", "home town"): "My village home is in Jhenaidah.",
-        ("what do you like to do", "hobby", "travel"): "I like traveling and exploring new places."
+        ("what do you like to do", "hobby", "travel"): "I like traveling and exploring new places.",
+        ("what is my dream country", "dream country", "sopner desh", "dream land"): "oh, it's switzerland.I wish I would visit this country!"
     }
 
     for keywords, answer in qa.items():
